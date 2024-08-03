@@ -16,7 +16,6 @@ struct equipoF1{
 bool sustituir_piloto(vector<equipoF1>& equipo, string nombre);
 
 int main() {
-	  
 	string nombre;
 	
 	vector<equipoF1> vec = {

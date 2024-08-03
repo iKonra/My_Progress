@@ -56,8 +56,8 @@ void cargar(vector <Datos>& cole,int &N) {
 pair<string,string> Menores(vector <Datos> cole, int N) {
 	string patentem1 = "None1";
 	string patentem2 = "None2";
-	int MinKm1 = INT_MAX;
-	int MinKm2 = INT_MAX;
+	int MinKm1 = 20000000;
+	int MinKm2 = 20000000;
 	pair<string, string> d;
 	for (int i = 0; i < N; i++) {
 		if (cole[i].pasajeros < MinKm1) { 

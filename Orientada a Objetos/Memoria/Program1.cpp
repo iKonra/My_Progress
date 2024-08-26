@@ -14,6 +14,7 @@ int main() {
 	cout << "Que valor va a tener la segunda variable: "; cin >> *p2;
 	cout << "Los valores son: " << *p  << " y " << *p2 << endl;
 	cout << "Las posiciones son: " << p << " y " << p2;
+	delete p2;
 	
 	
 	return 0;

@@ -1,16 +1,17 @@
-// • El operador + para sumar dos objetos de la clase Racional.
-// • El operador * para multiplicar un objeto de tipo Racional por un entero.
-
+//	Para la clase Racional utilizada en el ejercicio anterior, implemente los operadores relacionales
+//	<, <=, >, >=, == y !=
+//	para comparar dos números racionales. Haga uso de dichos operadores desde un programa cliente.
 
 #include <iostream>
+#include <cmath>
 using namespace std;
 class Racional {
 public:
-	Racional(int num, int den) : m_num(num), m_den(den) { }
-	int VerNum() const { return m_num; }
-	int VerDen() const { return m_den; }
+	Racional(float num, float den) : m_num(num), m_den(den) { }
+	float VerNum() const { return m_num; }
+	float VerDen() const { return m_den; }
 private:
-		int m_num, m_den;
+		float m_num, m_den;
 };
 Racional operator+(Racional a, Racional b) {
 	Racional suma(a.VerNum() * b.VerDen() + b.VerNum() * a.VerDen(),a.VerDen() * b.VerDen());
@@ -21,41 +22,27 @@ Racional operator*(Racional a, Racional b) {
 	return multiplicacion;
 }
 bool operator<(Racional a, Racional b) {
-	if(a.VerNum()/a.VerDen() < b.VerNum()/b.VerDen()) {
-		return true;
-	} else 
-													return false;
-}
-bool operator<=(Racional a, Racional b) {
-	if(a.VerNum()/a.VerDen()  <= b.VerNum()/b.VerDen()) {
-		return true;
-	} else 
-		return false;
-}
-bool operator>(Racional a, Racional b) {
-	if(a.VerNum()/a.VerDen()  > b.VerNum()/b.VerDen()) {
-		return true;
-	} else 
-		return false;
-}
-bool operator>=(Racional a, Racional b) {
-	if(a.VerNum()/a.VerDen() >= b.VerNum()/b.VerDen()) {
-		return true;
-	} else 
-		return false;
+	return ((a.VerNum()/a.VerDen()) < (b.VerNum()/b.VerDen()));
 }
 bool operator==(Racional a, Racional b) {
-	if((a.VerNum()/a.VerDen())  == (b.VerNum()/b.VerDen())) {
-		return true;
-	} else 
-		return false;
+	return ((a.VerNum() / a.VerDen()) == (b.VerNum() / b.VerDen()));
+}
+bool operator<=(Racional a, Racional b) {
+	return ((a < b) or (a == b));
+}
+bool operator>(Racional a, Racional b) {
+	return not((a < b) or (a == b));
+}
+bool operator>=(Racional a, Racional b) {
+	return((a > b) or (a == b));
+}
+bool operator!=(Racional a, Racional b) {
+	return not(a == b);
 }
 int main() {
-	Racional a(3, 5), b(2, 3);
-	Racional aux = a + b;
-	cout << aux.VerNum() << '/' << aux.VerDen() << endl;
-	aux = a * b;
-	cout << aux.VerNum() << '/' << aux.VerDen() << endl;
+	Racional a(1, 8), b(2, 3);
+	cout <<  (a == b) << endl;
+	cout << (a <= b) << endl;
 	
 	
 	return 0;

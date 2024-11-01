@@ -1,3 +1,0 @@
-Alumno: Lopez Javier Promedio: 73 Condicion: Promocion
-Alumno: Garcia Ana Promedio: 75 Condicion: Promocion
-Alumno: Farias Daniel Promedio: 61 Condicion: Regular
